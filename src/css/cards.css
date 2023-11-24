@@ -1,9 +1,3 @@
-.body-cards {
-    background-image: url("../imagens/fundo/back-sm.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: bottom;
-}
 
 .result {
     position: absolute;
@@ -30,8 +24,8 @@
 }
 
 #result-close {
-    background-color: #252525;
-    padding: 3px 8px;
+    background-color: #1A1A1A;
+    padding: 3px 10px;
     font-size: 18px;
     position: absolute;
     top: 30%;
@@ -48,7 +42,7 @@
 }
 
 .container-cards {
-    background-color: rgba(49, 49, 49, 0.582);
+    background-color: rgba(49, 49, 49, 0.11);
 }
 
 .box-cards {
@@ -69,9 +63,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 90%;
+    width: 80%;
     height: 40px;
-    font-size: 14px;
     text-transform: uppercase;
     font-family: 'Special Elite';
 }
@@ -87,6 +80,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-size: 12px;
     padding: 2px 13px 0 13px;
 }
 
@@ -218,5 +212,3 @@
     background-color: #560808;
     font-size: 10px;
 }
-
-@media only screen and (min-width: 540px) {}

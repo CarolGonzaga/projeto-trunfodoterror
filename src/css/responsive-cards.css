@@ -1,0 +1,368 @@
+@media only screen and (min-width: 550px) {
+
+    .result {
+        transform: translate(-50%, -90%);
+    }
+
+    .deck-container {
+        max-width: 490px;
+    }
+
+    .deck-container p {
+        font-size: 20px;
+    }
+
+    .btn-deck {
+        font-size: 20px;
+    }
+
+    .card-front {
+        height: 300px;
+        max-width: 510px;
+    }
+
+    .card-title {
+        width: 90%;
+    }
+
+    .card-name {
+        font-size: 20px;
+    }
+
+    .card-name-movie {
+        font-size: 12px;
+        font-family: 'Ruda', sans-serif;
+    }
+
+    .card-img {
+        height: 100%;
+        width: 100%;
+    }
+
+    .card-att {
+        font-size: 14px;
+    }
+
+    .btn-draw {
+        width: 200px;
+        height: 50px;
+        font-size: 20px;
+    }
+
+    .btn-draw:active {
+        font-size: 18px;
+    }
+}
+
+@media only screen and (max-height: 700px) {
+
+    .box-cards {
+        display: grid;
+        grid-template-columns: 45% 10% 45%;
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .cards {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .reverse {
+        order: 1;
+    }
+
+    .deck-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+        height: auto;
+        margin: 10px 0;
+    }
+
+    .deck-container p {
+        font-size: 18px;
+    }
+
+    .btn-deck {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        font-size: 16px;
+    }
+
+    .card-front {
+        position: relative;
+        width: 308px;
+        height: 470px;
+        display: flex;
+        flex-direction: column;
+        gap: 17px;
+    }
+
+    .card-mask {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("../imagens/fundo/back-card-lg.jpg");
+        background-size: cover;
+        z-index: 1;
+        border-radius: 6px;
+    }
+
+    .card-title {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        width: 100%;
+        height: 55px;
+    }
+
+    .card-name {
+        font-size: 18px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+
+    .card-name-movie {
+        font-size: 11px;
+    }
+
+    .card-img {
+        max-height: 187px;
+    }
+
+    .card-att {
+        background-color: #414141;
+        border-radius: 10px;
+        font-size: 12px;
+        width: 100%;
+        max-height: 166px;
+        padding: 10px;
+    }
+
+    .card-list-att {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+    }
+
+    .card-list-att li {
+        display: flex;
+        justify-content: space-between;
+        padding: 4px 7px;
+    }
+
+    .card-list-att li:hover {
+        background-color: #560808;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+
+    .card-highlight {
+        background-color: #560808;
+        border-radius: 8px;
+    }
+
+    .btns-cards {
+        grid-column: 2;
+        display: flex;
+        height: 100vh;
+        justify-content: space-evenly;
+        align-items: flex-end;
+        padding-bottom: 30px;
+    }
+
+    .btn-draw {
+        width: 120px;
+        height: 30px;
+        color: #FFF;
+        background-color: #AF0404;
+        text-shadow: 2px 2px 5px #0000007a;
+        font-size: 12px;
+        text-transform: uppercase;
+        font-family: 'Special Elite';
+        border-radius: 10px;
+        border: 1px solid #FFF;
+        padding-top: 3px;
+        transition: background-color 0.2s ease;
+    }
+
+    .btn-draw:active {
+        background-color: #560808;
+        font-size: 10px;
+    }
+}
+
+@media only screen and (min-width: 800px) and (min-height: 700px) {
+
+
+    .box-cards {
+        display: grid;
+        grid-template-columns: 45% 10% 45%;
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .cards {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .reverse {
+        order: 1;
+    }
+
+    .deck-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+        height: auto;
+        margin: 10px 0;
+    }
+
+    .deck-container p {
+        font-size: 30px;
+    }
+
+    .btn-deck {
+        width: 367px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        font-size: 16px;
+        background-color: rgba(0, 0, 0, 0.329);
+        border-radius: 20px;
+        padding: 20px 25px;
+        margin-bottom: 20px;
+    }
+
+    .card-front {
+        position: relative;
+        width: 367px;
+        height: 569px;
+        display: flex;
+        flex-direction: column;
+        gap: 17px;
+    }
+
+    .card-mask {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("../imagens/fundo/back-card-lg.jpg");
+        background-size: cover;
+        z-index: 1;
+        border-radius: 6px;
+    }
+
+    .card-title {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        width: 100%;
+        height: 67px;
+    }
+
+    .card-name {
+        font-size: 20px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+
+    .card-name-movie {
+        font-size: 11px;
+    }
+
+    .card-img {
+        max-height: 227px;
+    }
+
+    .card-att {
+        background-color: #414141;
+        border-radius: 10px;
+        font-size: 14px;
+        width: 100%;
+        max-height: 200px;
+        padding: 10px;
+    }
+
+    .card-list-att {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+    }
+
+    .card-list-att li {
+        display: flex;
+        justify-content: space-between;
+        padding: 4px 7px;
+    }
+
+    .card-list-att li:hover {
+        background-color: #560808;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+
+    .card-highlight {
+        background-color: #560808;
+        border-radius: 8px;
+    }
+
+    .btns-cards {
+        grid-column: 2;
+        display: flex;
+        height: 100vh;
+        justify-content: space-evenly;
+        align-items: flex-end;
+        padding-bottom: 30px;
+    }
+
+    .btn-draw {
+        width: 120px;
+        height: 30px;
+        color: #FFF;
+        background-color: #AF0404;
+        text-shadow: 2px 2px 5px #0000007a;
+        font-size: 12px;
+        text-transform: uppercase;
+        font-family: 'Special Elite';
+        border-radius: 10px;
+        border: 1px solid #FFF;
+        padding-top: 3px;
+        transition: background-color 0.2s ease;
+    }
+
+    .btn-draw:active {
+        background-color: #560808;
+        font-size: 10px;
+    }
+}

@@ -334,26 +334,26 @@ function generateGameHTML() {
             <span id="result-close">x</span>
         </div>
         <div class="container-cards">
-        <div class="box-cards">
-          <div class="cards">
-            <div class="deck-container">
-                <p>Máquina</p>
-                <div class="btn-deck">Total de cartas: <span id="deck-count">${villainsMachine.length}</span></div>
+            <div class="box-cards">
+                <div class="cards reverse">
+                    <div class="deck-container">
+                        <p>Máquina</p>
+                        <div class="btn-deck">Total de cartas: <span id="deck-count">${villainsMachine.length}</span></div>
+                    </div>
+                    ${machineCard}
+                </div>
+                <div class="cards">
+                    <div class="deck-container">
+                        <p>Você</p>
+                        <div class="btn-deck">Total de cartas: <span id="deck-count">${villainsPlayer.length}</span></div>
+                    </div>
+                    ${playerCard}
+                </div>
+                <div class="btns-cards">
+                    <button id="btn-reset" class="btn-draw">Reiniciar</button>
+                </div>
             </div>
-            ${machineCard}
-          </div>
-          <div class="cards">
-            <div class="deck-container">
-                <p>Você</p>
-                <div class="btn-deck">Total de cartas: <span id="deck-count">${villainsPlayer.length}</span></div>
-            </div>
-            ${playerCard}
-          </div>
-          <div class="btns-cards">
-            <button id="btn-reset" class="btn-draw">Reiniciar</button>
-          </div>
         </div>
-      </div>
     `;
 }
 
@@ -365,7 +365,7 @@ function generateCardHTML(lista, player) {
         cardMask = 'card-mask-pl';
     }
 
-    const imageSource = window.innerWidth < 540 ?
+    const imageSource = window.innerWidth <= 800 ?
         `./src/imagens/personagens/${lista.Villain.replace(/\s/g, '')}-sm.jpg` :
         `./src/imagens/personagens/${lista.Villain.replace(/\s/g, '')}.jpg`;
 
@@ -472,7 +472,7 @@ function playerWin() {
     if (villainsMachine.length === 0) {
         resultView('Fim de Jogo!');
     } else {
-        resultView('Você Venceu!');
+        resultView('Você Ganhou!');
     }
 }
 
