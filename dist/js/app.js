@@ -1,4 +1,12 @@
-const villains = [
+"use strict";
+function shuffleArray(array) {
+    var _a;
+    for (var indexA = array.length - 1; indexA > 0; indexA--) {
+        var indexB = Math.floor(Math.random() * (indexA + 1));
+        _a = [array[indexB], array[indexA]], array[indexA] = _a[0], array[indexB] = _a[1];
+    }
+}
+var villains = [
     {
         Villain: "A Coisa",
         Movie: "O Enigma do Outro Mundo - 1982",
@@ -288,206 +296,130 @@ const villains = [
         Intelligence: 50,
     },
 ];
-
 shuffleArray(villains);
-let villainsPlayer = villains.slice(0, villains.length / 2);
-let villainsMachine = villains.slice(villains.length / 2);
-
-const btnHome = document.querySelector('#btn-home');
-
-btnHome.addEventListener('click', () => {
+var villainsPlayer = villains.slice(0, villains.length / 2);
+var villainsMachine = villains.slice(villains.length / 2);
+var btnHome = document.querySelector('#btn-home');
+btnHome.addEventListener('click', function () {
     document.body.classList.add('body-cards');
     startGame();
 });
-
 function startGame() {
-
-    const main = document.querySelector('main');
-    main.innerHTML = generateGameHTML();
-
-    const btnReset = document.getElementById('btn-reset');
-    btnReset.addEventListener('click', resetGame);
-
-    const listAttPlayer = document.querySelectorAll('.att-item');
-    listAttPlayer.forEach(item => {
-        item.addEventListener('click', () => {
-            handleAttributeClick(item)
-            highlightAttribute(item);
+    var main = document.querySelector('main');
+    if (main) {
+        main.innerHTML = generateGameHTML();
+        var btnReset = document.getElementById('btn-reset');
+        if (btnReset) {
+            btnReset.addEventListener('click', resetGame);
+        }
+        var listAttPlayer = document.querySelectorAll('.att-item');
+        listAttPlayer.forEach(function (item) {
+            item.addEventListener('click', function () {
+                handleAttributeClick(item);
+                highlightAttribute(item);
+            });
         });
-    });
-}
-
-function shuffleArray(array) {
-    for (let indexA = array.length - 1; indexA > 0; indexA--) {
-        const indexB = Math.floor(Math.random() * (indexA + 1));
-        [array[indexA], array[indexB]] = [array[indexB], array[indexA]];
     }
 }
-
-function generateGameHTML() {
-    const playerCard = generateCardHTML(villainsPlayer[0], 'player');
-    const machineCard = generateCardHTML(villainsMachine[0], 'machine');
-
-    return `
-        <div class="result" id="result-view">
-            <span id="result-text"></span>
-            <span id="result-close">x</span>
-        </div>
-        <div class="container-cards">
-            <div class="box-cards">
-                <div class="cards reverse">
-                    <div class="deck-container">
-                        <p>Máquina</p>
-                        <div class="btn-deck">Total de cartas: <span id="deck-count">${villainsMachine.length}</span></div>
-                    </div>
-                    ${machineCard}
-                </div>
-                <div class="cards">
-                    <div class="deck-container">
-                        <p>Você</p>
-                        <div class="btn-deck">Total de cartas: <span id="deck-count">${villainsPlayer.length}</span></div>
-                    </div>
-                    ${playerCard}
-                </div>
-                <div class="btns-cards">
-                    <button id="btn-reset" class="btn-draw">Reiniciar</button>
-                </div>
-            </div>
-        </div>
-    `;
-}
-
-function generateCardHTML(lista, player) {
-    let cardMask = '';
-    if (player == 'machine') {
-        cardMask = 'card-mask-ma';
-    } else {
-        cardMask = 'card-mask-pl';
-    }
-
-    const imageSource = window.innerWidth <= 800 ?
-        `./src/imagens/personagens/${lista.Villain.replace(/\s/g, '')}-sm.jpg` :
-        `./src/imagens/personagens/${lista.Villain.replace(/\s/g, '')}.jpg`;
-
-    return `
-      <div class="card-front" id="card-${player}">
-        <div class="card-mask" id="${cardMask}"></div>
-        <div class="card-title">
-          <p class="card-name">${lista.Villain}</p>
-          <p class="card-name-movie">${lista.Movie}</p>
-        </div>
-        <div class="card-img">
-          <img src="${imageSource}" alt="${lista.Villain}">
-        </div>
-        <div class="card-att">
-          <ul class="card-list-att">
-            <li class="att-item" data-attribute="DamageForce">
-                <span>Dano Físico:</span>
-                <span>${lista.DamageForce}</span>
-            </li>
-            <li class="att-item" data-attribute="DamageHorror">
-                <span>Dano Mental:</span>
-                <span>${lista.DamageHorror}</span>
-            </li>
-            <li class="att-item" data-attribute="Speed">
-                <span>Velocidade:</span>
-                <span>${lista.Speed}</span>
-            </li>
-            <li class="att-item" data-attribute="Regeneration">
-                <span>Taxa de Regeneração:</span>
-                <span>${lista.Regeneration}</span>
-            </li>
-            <li class="att-item" data-attribute="Intelligence">
-                <span>Inteligência:</span>
-                <span>${lista.Intelligence}</span>
-            </li>
-        
-          </ul>
-        </div>
-      </div>
-    `;
-}
-
 function resetGame() {
     shuffleArray(villains);
     villainsPlayer = villains.slice(0, villains.length / 2);
     villainsMachine = villains.slice(villains.length / 2);
-
     startGame();
 }
-
 function resultView(result) {
-    const popUp = document.getElementById('result-view');
-    const popUpText = document.getElementById('result-text');
-
-    setTimeout(() => {
-        popUp.style.display = 'block';
-        popUpText.textContent = result;
-    }, 800);
-
-    document.getElementById('result-close').addEventListener('click', () => {
-        popUp.style.display = 'none';
-        if (result === 'Fim de Jogo!') {
-            resetGame();
-        } else {
-            startGame();
+    var popUp = document.getElementById('result-view');
+    var popUpText = document.getElementById('result-text');
+    if (popUp && popUpText) {
+        setTimeout(function () {
+            popUp.style.display = 'block';
+            popUpText.textContent = result;
+        }, 800);
+        var resultClose = document.getElementById('result-close');
+        if (resultClose) {
+            resultClose.addEventListener('click', function () {
+                popUp.style.display = 'none';
+                if (result === 'Fim de Jogo!') {
+                    resetGame();
+                }
+                else {
+                    startGame();
+                }
+            });
         }
-    })
-}
-
-function handleAttributeClick(item) {
-    document.getElementById('card-mask-ma').style.display = 'none';
-
-    const attType = item.getAttribute('data-attribute');
-    const attPlayer = villainsPlayer[0][attType];
-    const attMachine = villainsMachine[0][attType];
-
-    if (attPlayer > attMachine) {
-        playerWin();
-    } else if (attPlayer === attMachine) {
-        playerDraw();
-    } else {
-        playerLose();
     }
 }
-
+function handleAttributeClick(item) {
+    var cardMaskMa = document.getElementById('card-mask-ma');
+    if (cardMaskMa) {
+        cardMaskMa.style.display = 'none';
+    }
+    var attType = item.getAttribute('data-attribute');
+    if (attType) {
+        var attPlayer = villainsPlayer[0][attType];
+        var attMachine = villainsMachine[0][attType];
+        if (attPlayer > attMachine) {
+            playerWin();
+        }
+        else if (attPlayer === attMachine) {
+            playerDraw();
+        }
+        else {
+            playerLose();
+        }
+    }
+}
 function highlightAttribute(item) {
     // Remove a classe de destaque de todos os itens
-    const allItems = document.querySelectorAll('.att-item');
-    allItems.forEach(item => item.classList.remove('card-highlight'));
-
+    var allItems = document.querySelectorAll('.att-item');
+    allItems.forEach(function (item) { return item.classList.remove('card-highlight'); });
     // Adiciona a classe de destaque ao item correspondente no card-machine
-    const attribute = item.getAttribute('data-attribute');
-    const machineItem = document.querySelector(`.card-front#card-machine .att-item[data-attribute="${attribute}"]`);
-    machineItem.classList.add('card-highlight');
+    var attribute = item.getAttribute('data-attribute');
+    var machineItem = document.querySelector(".card-front#card-machine .att-item[data-attribute=\"".concat(attribute, "\"]"));
+    if (machineItem) {
+        machineItem.classList.add('card-highlight');
+    }
 }
-
-// falta adicionar a mecanica de troca de cartas
-// falta adicionar os quesitos de vitória ou derrota (deck zerado)
-// falta adicionar a inteligência e interação da máquina
-
 function playerWin() {
-    villainsPlayer.push(villainsMachine.shift());
-    villainsPlayer.push(villainsPlayer.shift());
     if (villainsMachine.length === 0) {
         resultView('Fim de Jogo!');
-    } else {
+    }
+    else {
+        villainsPlayer.push(villainsMachine.shift());
+        villainsPlayer.push(villainsPlayer.shift());
         resultView('Você Ganhou!');
     }
 }
-
 function playerLose() {
-    villainsMachine.push(villainsPlayer.shift());
-    villainsMachine.push(villainsMachine.shift());
     if (villainsPlayer.length === 0) {
         resultView('Fim de Jogo!');
-    } else {
+    }
+    else {
+        villainsMachine.push(villainsPlayer.shift());
+        villainsMachine.push(villainsMachine.shift());
         resultView('Você Perdeu!');
     }
 }
-
 function playerDraw() {
     villainsMachine.push(villainsMachine.shift());
     villainsPlayer.push(villainsPlayer.shift());
     resultView('Empatou');
+}
+function generateCardHTML(lista, player) {
+    var cardMask = '';
+    if (player == 'machine') {
+        cardMask = 'card-mask-ma';
+    }
+    else {
+        cardMask = 'card-mask-pl';
+    }
+    var imageSource = window.innerWidth <= 800
+        ? "./src/imagens/personagens/".concat(lista.Villain.replace(/\s/g, ''), "-sm.jpg")
+        : "./src/imagens/personagens/".concat(lista.Villain.replace(/\s/g, ''), ".jpg");
+    return "\n      <div class=\"card-front\" id=\"card-".concat(player, "\">\n        <div class=\"card-mask\" id=\"").concat(cardMask, "\"></div>\n        <div class=\"card-title\">\n          <p class=\"card-name\">").concat(lista.Villain, "</p>\n          <p class=\"card-name-movie\">").concat(lista.Movie, "</p>\n        </div>\n        <div class=\"card-img\">\n          <img src=\"").concat(imageSource, "\" alt=\"").concat(lista.Villain, "\">\n        </div>\n        <div class=\"card-att\">\n          <ul class=\"card-list-att\">\n            <li class=\"att-item\" data-attribute=\"DamageForce\">\n                <span>Dano F\u00EDsico:</span>\n                <span>").concat(lista.DamageForce, "</span>\n            </li>\n            <li class=\"att-item\" data-attribute=\"DamageHorror\">\n                <span>Dano Mental:</span>\n                <span>").concat(lista.DamageHorror, "</span>\n            </li>\n            <li class=\"att-item\" data-attribute=\"Speed\">\n                <span>Velocidade:</span>\n                <span>").concat(lista.Speed, "</span>\n            </li>\n            <li class=\"att-item\" data-attribute=\"Regeneration\">\n                <span>Taxa de Regenera\u00E7\u00E3o:</span>\n                <span>").concat(lista.Regeneration, "</span>\n            </li>\n            <li class=\"att-item\" data-attribute=\"Intelligence\">\n                <span>Intelig\u00EAncia:</span>\n                <span>").concat(lista.Intelligence, "</span>\n            </li>\n          </ul>\n        </div>\n      </div>\n    ");
+}
+function generateGameHTML() {
+    var playerCard = generateCardHTML(villainsPlayer[0], 'player');
+    var machineCard = generateCardHTML(villainsMachine[0], 'machine');
+    return "\n        <div class=\"result\" id=\"result-view\">\n            <span id=\"result-text\"></span>\n            <span id=\"result-close\">x</span>\n        </div>\n        <div class=\"container-cards\">\n            <div class=\"box-cards\">\n                <div class=\"cards reverse\">\n                    <div class=\"deck-container\">\n                        <p>M\u00E1quina</p>\n                        <div class=\"btn-deck\">Total de cartas: <span id=\"deck-count\">".concat(villainsMachine.length, "</span></div>\n                    </div>\n                    ").concat(machineCard, "\n                </div>\n                <div class=\"cards\">\n                    <div class=\"deck-container\">\n                        <p>Voc\u00EA</p>\n                        <div class=\"btn-deck\">Total de cartas: <span id=\"deck-count\">").concat(villainsPlayer.length, "</span></div>\n                    </div>\n                    ").concat(playerCard, "\n                </div>\n                <div class=\"btns-cards\">\n                    <button id=\"btn-reset\" class=\"btn-draw\">Reiniciar</button>\n                </div>\n            </div>\n        </div>\n    ");
 }
