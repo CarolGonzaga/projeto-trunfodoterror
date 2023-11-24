@@ -1,0 +1,222 @@
+.body-cards {
+    background-image: url("../imagens/fundo/back-sm.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+
+.result {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 320px;
+    height: 164px;
+    transform: translate(-50%, -80%);
+    background-image: url("../imagens/fundo/Ativo\ 1.png");
+    background-size: cover;
+    z-index: 10;
+    display: none;
+}
+
+#result-text {
+    font-family: 'Special Elite';
+    font-size: 26px;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%);
+    width: 100vw;
+    text-align: center;
+}
+
+#result-close {
+    background-color: #252525;
+    padding: 3px 8px;
+    font-size: 18px;
+    position: absolute;
+    top: 30%;
+    right: 10%;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+#result-close:active {
+    background-color: #1A1A1A;
+    font-size: 16px;
+
+}
+
+.container-cards {
+    background-color: rgba(49, 49, 49, 0.582);
+}
+
+.box-cards {
+    display: grid;
+    grid-template-rows: 45% 45% 10%;
+    width: 100vw;
+    height: 100vh;
+}
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.deck-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    height: 40px;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-family: 'Special Elite';
+}
+
+.deck-container p {
+    font-size: 14px;
+    text-shadow: 2px 2px 5px #0000007a;
+}
+
+.btn-deck {
+    width: 60%;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2px 13px 0 13px;
+}
+
+.card-front {
+    position: relative;
+    width: 90%;
+    max-width: 400px;
+    max-height: 100%;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-template-rows: 30% 70%;
+    column-gap: 5px;
+    justify-items: center;
+    align-items: center;
+    background-color: #252525;
+    border: 6px solid #1A1A1A;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.card-mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../imagens/fundo/back-card.jpg");
+    background-size: cover;
+    z-index: 1;
+    border-radius: 6px;
+}
+
+#card-mask-pl {
+    display: none;
+}
+
+.card-title {
+    grid-column: 2;
+    grid-row: 1;
+    background-color: #414141;
+    font-family: 'Special Elite';
+    padding: 6px 14px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 95%;
+    height: 100%;
+}
+
+.card-name {
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.card-name-movie {
+    font-size: 10px;
+}
+
+.card-img {
+    grid-column: 1;
+    grid-row: 1/3;
+}
+
+.card-img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+
+.card-att {
+    grid-column: 2;
+    grid-row: 2;
+    font-size: 10px;
+    width: 95%;
+    height: 100%;
+    padding: 10px 3px 5px 3px;
+}
+
+.card-list-att {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.card-list-att li {
+    display: flex;
+    justify-content: space-between;
+    padding: 4px 7px;
+}
+
+.card-list-att li:hover {
+    background-color: #560808;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.card-highlight {
+    background-color: #560808;
+    border-radius: 8px;
+  }
+
+.btns-cards {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.btn-draw {
+    width: 120px;
+    height: 30px;
+    color: #FFF;
+    background-color: #AF0404;
+    text-shadow: 2px 2px 5px #0000007a;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-family: 'Special Elite';
+    border-radius: 10px;
+    border: 1px solid #FFF;
+    padding-top: 3px;
+    transition: background-color 0.2s ease;
+}
+
+.btn-draw:active {
+    background-color: #560808;
+    font-size: 10px;
+}
+
+@media only screen and (min-width: 540px) {}
