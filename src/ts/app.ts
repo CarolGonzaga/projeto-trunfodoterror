@@ -1,3 +1,4 @@
+// Define o tipo Villain para representar os vilões no jogo
 type Villain = {
     Villain: string;
     Movie: string;
@@ -6,10 +7,13 @@ type Villain = {
     Speed: number;
     Regeneration: number;
     Intelligence: number;
+
+    // Índice adicional para aceitar qualquer chave como string ou número
     [key: string]: string | number;
 };
 
 
+// Função para embaralhar um array
 function shuffleArray(array: Villain[]) {
     for (let indexA = array.length - 1; indexA > 0; indexA--) {
         const indexB = Math.floor(Math.random() * (indexA + 1));
@@ -17,149 +21,151 @@ function shuffleArray(array: Villain[]) {
     }
 }
 
+
+// Array de vilões para o jogo
 const villains: Villain[] = [
     {
         Villain: "A Coisa",
         Movie: "O Enigma do Outro Mundo - 1982",
-        DamageForce: 50,
+        DamageForce: 60,
         DamageHorror: 90,
-        Speed: 30,
+        Speed: 50,
         Regeneration: 80,
-        Intelligence: 60,
+        Intelligence: 30,
     },
     {
         Villain: "Babadook",
         Movie: "O Babadook - 2014",
         DamageForce: 40,
         DamageHorror: 70,
-        Speed: 30,
-        Regeneration: 50,
-        Intelligence: 60,
+        Speed: 50,
+        Regeneration: 60,
+        Intelligence: 80,
     },
     {
         Villain: "Black Phillip",
         Movie: "A Bruxa - 2015",
         DamageForce: 40,
-        DamageHorror: 80,
+        DamageHorror: 20,
         Speed: 30,
         Regeneration: 60,
-        Intelligence: 60,
+        Intelligence: 70,
     },
     {
         Villain: "Ben Willis",
         Movie: "Eu Sei o que Vocês Fizeram no Verão Passado - 1997",
         DamageForce: 60,
-        DamageHorror: 60,
-        Speed: 40,
-        Regeneration: 20,
-        Intelligence: 50,
+        DamageHorror: 40,
+        Speed: 30,
+        Regeneration: 50,
+        Intelligence: 20,
     },
     {
         Villain: "Daniel Robitaille",
         Movie: "Candyman - 1992",
-        DamageHorror: 60,
-        DamageForce: 70,
-        Speed: 40,
-        Regeneration: 40,
-        Intelligence: 70,
+        DamageHorror: 50,
+        DamageForce: 40,
+        Speed: 30,
+        Regeneration: 60,
+        Intelligence: 20,
     },
     {
         Villain: "Carrietta White",
         Movie: "Carrie, a Estranha - 1976",
-        DamageForce: 20,
+        DamageForce: 10,
         DamageHorror: 70,
-        Speed: 30,
-        Regeneration: 40,
-        Intelligence: 80,
-    },
-    {
-        Villain: "Charles Lee Ray",
-        Movie: "Chucky, o Brinquedo Assassino - 1988",
-        DamageForce: 30,
-        DamageHorror: 60,
-        Speed: 40,
-        Regeneration: 20,
-        Intelligence: 70,
-    },
-    {
-        Villain: "Christine",
-        Movie: "Christine, o Carro Assassino - 1983",
-        DamageForce: 70,
-        DamageHorror: 30,
-        Speed: 40,
+        Speed: 10,
         Regeneration: 20,
         Intelligence: 50,
     },
     {
+        Villain: "Charles Lee Ray",
+        Movie: "Chucky, o Brinquedo Assassino - 1988",
+        DamageForce: 60,
+        DamageHorror: 70,
+        Speed: 50,
+        Regeneration: 90,
+        Intelligence: 80,
+    },
+    {
+        Villain: "Christine",
+        Movie: "Christine, o Carro Assassino - 1983",
+        DamageForce: 50,
+        DamageHorror: 30,
+        Speed: 90,
+        Regeneration: 60,
+        Intelligence: 20,
+    },
+    {
         Villain: "Creeper",
         Movie: "Olhos Famintos - 2001",
-        DamageForce: 80,
-        DamageHorror: 40,
-        Speed: 70,
-        Regeneration: 30,
-        Intelligence: 60,
+        DamageForce: 70,
+        DamageHorror: 60,
+        Speed: 100,
+        Regeneration: 80,
+        Intelligence: 30,
     },
     {
         Villain: "Edith Brennan",
         Movie: "Mama - 2013",
-        DamageForce: 20,
+        DamageForce: 50,
         DamageHorror: 80,
+        Speed: 40,
+        Regeneration: 90,
+        Intelligence: 60,
+    },
+    {
+        Villain: "Leena Klammer",
+        Movie: "A Órfã - 2009",
+        DamageForce: 20,
+        DamageHorror: 50,
         Speed: 30,
         Regeneration: 40,
         Intelligence: 70,
     },
     {
-        Villain: "Leena Klammer",
-        Movie: "A Órfã - 2009",
-        DamageForce: 40,
-        DamageHorror: 70,
-        Speed: 30,
-        Regeneration: 40,
-        Intelligence: 60,
-    },
-    {
         Villain: "Frederick Krueger",
         Movie: "A Hora do Pesadelo - 1984",
-        DamageForce: 30,
-        DamageHorror: 90,
-        Speed: 50,
-        Regeneration: 70,
-        Intelligence: 80,
+        DamageForce: 70,
+        DamageHorror: 80,
+        Speed: 40,
+        Regeneration: 90,
+        Intelligence: 60,
     },
     {
         Villain: "Ghostface",
         Movie: "Pânico - 1996",
-        DamageForce: 40,
-        DamageHorror: 70,
-        Speed: 60,
-        Regeneration: 30,
-        Intelligence: 60,
+        DamageForce: 60,
+        DamageHorror: 40,
+        Speed: 30,
+        Regeneration: 70,
+        Intelligence: 50,
     },
     {
         Villain: "Hannibal Lecter",
         Movie: "O Silêncio dos Inocentes - 1991",
-        DamageForce: 30,
-        DamageHorror: 90,
+        DamageForce: 40,
+        DamageHorror: 60,
         Speed: 30,
-        Regeneration: 80,
+        Regeneration: 20,
         Intelligence: 90,
     },
     {
         Villain: "Jack Torrance",
         Movie: "O Iluminado - 1980",
         DamageForce: 60,
-        DamageHorror: 70,
+        DamageHorror: 50,
         Speed: 30,
         Regeneration: 20,
-        Intelligence: 60,
+        Intelligence: 40,
     },
     {
         Villain: "Jason Voorhees",
         Movie: "Sexta-Feira 13 - 1980",
-        DamageForce: 90,
-        DamageHorror: 30,
-        Speed: 50,
-        Regeneration: 10,
+        DamageForce: 70,
+        DamageHorror: 50,
+        Speed: 40,
+        Regeneration: 90,
         Intelligence: 30,
     },
     {
@@ -168,167 +174,176 @@ const villains: Villain[] = [
         DamageForce: 20,
         DamageHorror: 90,
         Speed: 30,
-        Regeneration: 70,
-        Intelligence: 80,
+        Regeneration: 40,
+        Intelligence: 100,
     },
     {
         Villain: "John Doe",
         Movie: "Seven: Os Sete Crimes Capitais - 1995",
-        DamageForce: 30,
-        DamageHorror: 90,
-        Speed: 20,
-        Regeneration: 70,
+        DamageForce: 20,
+        DamageHorror: 70,
+        Speed: 30,
+        Regeneration: 10,
         Intelligence: 90,
     },
     {
         Villain: "Leatherface",
         Movie: "O Massacre da Serra Elétrica - 1974",
         DamageForce: 80,
-        DamageHorror: 30,
-        Speed: 50,
-        Regeneration: 10,
-        Intelligence: 40,
+        DamageHorror: 60,
+        Speed: 40,
+        Regeneration: 100,
+        Intelligence: 30,
     },
     {
         Villain: "Michael Myers",
         Movie: "Halloween - 1978",
         DamageForce: 80,
-        DamageHorror: 30,
+        DamageHorror: 60,
         Speed: 40,
-        Regeneration: 10,
-        Intelligence: 50,
+        Regeneration: 100,
+        Intelligence: 30,
     },
     {
         Villain: "Norman Bates",
         Movie: "Psicose - 1960",
-        DamageForce: 30,
-        DamageHorror: 70,
+        DamageForce: 40,
+        DamageHorror: 60,
         Speed: 30,
-        Regeneration: 40,
-        Intelligence: 80,
+        Regeneration: 20,
+        Intelligence: 50,
     },
     {
         Villain: "Pazuzu",
         Movie: "O Exorcista - 1973",
         DamageForce: 50,
-        DamageHorror: 90,
+        DamageHorror: 100,
         Speed: 20,
-        Regeneration: 80,
+        Regeneration: 60,
         Intelligence: 70,
     },
     {
         Villain: "Patrick Bateman",
         Movie: "Psicopata Americano - 2000",
-        DamageForce: 30,
-        DamageHorror: 80,
-        Speed: 50,
+        DamageForce: 40,
+        DamageHorror: 10,
+        Speed: 30,
         Regeneration: 20,
-        Intelligence: 90,
+        Intelligence: 80,
     },
     {
         Villain: "Pennywise",
         Movie: "It - A Coisa - 1990",
         DamageForce: 50,
         DamageHorror: 90,
-        Speed: 40,
+        Speed: 60,
         Regeneration: 70,
         Intelligence: 80,
     },
     {
         Villain: "Pinhead",
         Movie: "Hellraiser - 1987",
-        DamageForce: 40,
-        DamageHorror: 80,
-        Speed: 20,
-        Regeneration: 60,
-        Intelligence: 90,
+        DamageForce: 20,
+        DamageHorror: 70,
+        Speed: 50,
+        Regeneration: 40,
+        Intelligence: 80,
     },
     {
         Villain: "Predador",
         Movie: "Predador - 1987",
         DamageForce: 90,
-        DamageHorror: 40,
-        Speed: 60,
-        Regeneration: 30,
-        Intelligence: 70,
+        DamageHorror: 70,
+        Speed: 80,
+        Regeneration: 60,
+        Intelligence: 50,
     },
     {
         Villain: "Samara Morgan",
         Movie: "O Chamado - 2002",
-        DamageForce: 10,
+        DamageForce: 20,
         DamageHorror: 80,
-        Speed: 10,
-        Regeneration: 80,
-        Intelligence: 70,
+        Speed: 90,
+        Regeneration: 50,
+        Intelligence: 60,
     },
     {
         Villain: "Sil",
         Movie: "A Experiência - 1995",
-        DamageForce: 70,
-        DamageHorror: 50,
-        Speed: 60,
-        Regeneration: 30,
-        Intelligence: 50,
+        DamageForce: 50,
+        DamageHorror: 60,
+        Speed: 70,
+        Regeneration: 40,
+        Intelligence: 30,
     },
     {
         Villain: "Sweeney Todd",
         Movie: "O Barbeiro Demoníaco da Rua Fleet - 2007",
         DamageForce: 40,
-        DamageHorror: 70,
+        DamageHorror: 60,
         Speed: 30,
-        Regeneration: 30,
-        Intelligence: 80,
+        Regeneration: 20,
+        Intelligence: 70,
     },
     {
         Villain: "Tristana Medeiros",
         Movie: "REC - 2007",
-        DamageForce: 60,
-        DamageHorror: 80,
+        DamageForce: 50,
+        DamageHorror: 70,
         Speed: 40,
-        Regeneration: 50,
-        Intelligence: 50,
+        Regeneration: 60,
+        Intelligence: 30,
     },
     {
         Villain: "Tubarão Branco",
         Movie: "Tubarão - 1975",
-        DamageForce: 90,
-        DamageHorror: 40,
-        Speed: 60,
-        Regeneration: 10,
-        Intelligence: 30,
+        DamageForce: 100,
+        DamageHorror: 60,
+        Speed: 80,
+        Regeneration: 20,
+        Intelligence: 10,
     },
     {
         Villain: "Xenomorfo",
         Movie: "Alien, o Oitavo Passageiro - 1979",
-        DamageForce: 80,
-        DamageHorror: 60,
-        Speed: 40,
-        Regeneration: 20,
+        DamageForce: 90,
+        DamageHorror: 80,
+        Speed: 70,
+        Regeneration: 60,
         Intelligence: 50,
     },
 ];
 
+
+// Inicializa o jogo embaralhando os vilões e dividindo entre jogador e máquina
 shuffleArray(villains);
 let villainsPlayer: Villain[] = villains.slice(0, villains.length / 2);
 let villainsMachine: Villain[] = villains.slice(villains.length / 2);
 
-const btnHome = document.querySelector('#btn-home') as HTMLButtonElement;
 
+// Adiciona um ouvinte de clique para o botão "INICIAR JOGO"
+const btnHome = document.querySelector('#btn-home') as HTMLButtonElement;
 btnHome.addEventListener('click', () => {
     document.body.classList.add('body-cards');
     startGame();
 });
 
+
+// Função para iniciar o jogo
 function startGame(): void {
+
+    // Obtém o elemento 'main' e substitui seu conteúdo pelo HTML gerado
     const main = document.querySelector('main');
     if (main) {
         main.innerHTML = generateGameHTML();
 
+        // Adiciona ouvinte de clique para o botão de reset
         const btnReset = document.getElementById('btn-reset');
         if (btnReset) {
             btnReset.addEventListener('click', resetGame);
         }
 
+        // Adiciona ouvinte de clique para os atributos do jogador
         const listAttPlayer = document.querySelectorAll('.att-item');
         listAttPlayer.forEach((item) => {
             item.addEventListener('click', () => {
@@ -339,6 +354,7 @@ function startGame(): void {
     }
 }
 
+// Função para reiniciar o jogo
 function resetGame(): void {
     shuffleArray(villains);
     villainsPlayer = villains.slice(0, villains.length / 2);
@@ -347,6 +363,7 @@ function resetGame(): void {
     startGame();
 }
 
+// Função para exibir o resultado do round em uma janela pop-up
 function resultView(result: string): void {
     const popUp = document.getElementById('result-view');
     const popUpText = document.getElementById('result-text');
@@ -357,6 +374,7 @@ function resultView(result: string): void {
             popUpText.textContent = result;
         }, 800);
 
+        // Adiciona ouvinte de clique para fechar a janela e reiniciar ou começar um novo jogo dependendo do resultado do round.
         const resultClose = document.getElementById('result-close');
         if (resultClose) {
             resultClose.addEventListener('click', () => {
@@ -371,6 +389,7 @@ function resultView(result: string): void {
     }
 }
 
+// Função para comparar o atributo selecionado das duas cartas
 function handleAttributeClick(item: Element): void {
     const cardMaskMa = document.getElementById('card-mask-ma');
     if (cardMaskMa) {
@@ -392,6 +411,7 @@ function handleAttributeClick(item: Element): void {
     }
 }
 
+// Função para colorir no card da máquina o mesmo atributo selecionado pelo jogador 
 function highlightAttribute(item: Element): void {
     // Remove a classe de destaque de todos os itens
     const allItems = document.querySelectorAll('.att-item');
@@ -407,6 +427,7 @@ function highlightAttribute(item: Element): void {
     }
 }
 
+// Função para vitória
 function playerWin(): void {
     if (villainsMachine.length === 0) {
         resultView('Fim de Jogo!');
@@ -417,6 +438,7 @@ function playerWin(): void {
     }
 }
 
+// Função para derrota
 function playerLose(): void {
     if (villainsPlayer.length === 0) {
         resultView('Fim de Jogo!');
@@ -427,12 +449,14 @@ function playerLose(): void {
     }
 }
 
+// Função para empate
 function playerDraw(): void {
     villainsMachine.push(villainsMachine.shift() as Villain);
     villainsPlayer.push(villainsPlayer.shift() as Villain);
     resultView('Empatou');
 }
 
+// Função para gerar o HTML de uma carta do jogo
 function generateCardHTML(lista: Villain, player: string): string {
     let cardMask = '';
     if (player == 'machine') {
@@ -484,6 +508,7 @@ function generateCardHTML(lista: Villain, player: string): string {
     `;
 }
 
+// Função para gerar o HTML do jogo
 function generateGameHTML(): string {
     const playerCard = generateCardHTML(villainsPlayer[0], 'player');
     const machineCard = generateCardHTML(villainsMachine[0], 'machine');
