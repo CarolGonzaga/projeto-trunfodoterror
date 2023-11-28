@@ -1,4 +1,4 @@
-#Projeto - Super Trunfo do Terror 1.0
+# Projeto - Super Trunfo do Terror 1.0
 - **11º Projeto Pessoal**
 - Jogo de Cartas
 
