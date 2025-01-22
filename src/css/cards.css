@@ -212,3 +212,8 @@
     background-color: #560808;
     font-size: 10px;
 }
+
+#deck-count {
+    color: #AF0404;
+    font-size: 1.3rem;
+}
